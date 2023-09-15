@@ -1,0 +1,124 @@
+Deployment directions:
+    Navigate to the AWS home page and login
+    Navigate to the ec2 dashboard and switch the region to us-west-1
+    Click launch instance and confirm it in the drop down menu
+    Select Ubuntu Server 20.04 LTS (HVM), SSD Volume Type as the Amazon Machine Image (AMI) using the 64-bit (x86) configuration
+    Select the tx.micro instance because it is the only free tier eligible instance type
+    Use default instance details and click "Next: Add Storage"
+    Use default storage and click "Next: Add Tags"
+    Click "Add Tag" and create a tag with a key of "Name" and a value of "CSC 648 Class Project"
+    Click "Next: Configure Security Group"
+    Click "Add Rule" and change it to HTTP
+    Click "Review and Launch" and click "Launch"
+    Select "Create New Key Pair"
+    Name the key "CSC 648 Class Project Key"
+    Click "Launch Instances"
+    AWS will download a file called "CSC648ClassProjectKey.pem" which you should upload to the credentials folder of the repo
+    Navigate your browser back to ec2 and select "running instances"
+    Select "CSC 648 Class Project"
+    Using the "Public IPv4 address" value, and the "CSC648ClassProjectKey.pem" file in your downloads folder you should be able to ssh
+
+    #TODO: ADD INFORMATION REGARDING THE SERVER TO THE REPO AND DOCUMENT THE STEPS HERE
+
+
+To ssh into the machine (WINDOWS):
+Download and run the portable home edition of MobaXTerm software. Found here https://mobaxterm.mobatek.net/download-home-edition.html
+Click sessions in top left and then ssh
+Enter the ip address in remote host and ubuntu in username
+Click on the advanced ssh options and tap the use private key option and then put the path to th pem file in the field
+Click the Bookmark settings tab and enter CSC648Project as the Session Name
+Click OK
+Click CSC648Project in the Sessions tab on the left to ssh into the machine
+
+copy id_rsa into ~/.ssh
+
+Instance set up:
+    chmod 700 ~/.ssh/id_rsa
+    git clone git@github.com:CSC-648-SFSU/csc648-02-sp22-team02.git
+    cd csc648-02-sp22-team02/application/frontend
+
+    # CHECKOUT BRANCH HERE IF IT NEEDS TO SWITCH
+    # git checkout kv_feat_m4
+
+    sudo apt update -y && sudo apt upgrade -y && sudo apt-get update -y
+    sudo apt install npm -y
+    sudo npm cache clean -f
+    sudo npm install -g n
+    sudo n stable
+    sudo n 14.16.0
+    npm run build
+    cd ../backend
+    npm install
+    sudo apt install mysql-server mysql-client -y
+    sudo iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 3000
+    echo ":colo delek" > .vimrc
+
+# sudo cp ~/csc648-02-sp22-team02/DeploymentManual/g2react.service /etc/systemd/system/g2react.service
+
+Setting up MySql database:
+
+    Check if the instance is installed and running with
+        systemctl status mysql.service
+
+        create /etc/systemd/system/g2react.service
+        systemctl enable g2react.service
+        systemctl status g2react.service
+
+        sudo iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 3000
+
+        echo DANGEROUSLY_DISABLE_HOST_CHECK=true > .env.development.local
+
+
+    sudo mysql_secure_installation
+    Enter y for the security prompt
+    Enter 0 for low security
+
+    Enter the following as the password
+        Csc648MySqlPassword
+
+    Enter y to proceed with the password
+    Enter y to remove anonymous users
+    Enter n to deny remote root access
+    Enter n to keep the test db
+    Enter y to reload the privledges table
+
+    Enter the following command to enter sql mode:
+    sudo mysql
+
+    Create headless user
+        CREATE USER 'headless'@'%' IDENTIFIED BY '648headless';
+        GRANT ALL PRIVILEGES ON *.* TO 'headless'@'%';
+        FLUSH PRIVILEGES;
+        exit;
+
+https://dev.mysql.com/downloads/workbench/?os=src
+
+click no thanks
+
+Run the msi once complete
+
+Database, Connect to database
+
+Connection method: Stadard TCP/IP over ssh
+
+Csc648MySqlPassword
+
+
+ssh-keygen -t rsa
+chmod 400 ~/.ssh/id_rsa
+
+Upload public key to repo deploy key
+    repo setting > deploy key
+    copy public key to the body of the deploy key
+        cat ~/.ssh/id_rsa.pub
+
+ec2-54-177-73-103.us-west-1.compute.amazonaws.com
+
+
+
+Change this into making it a service
+    nohup npm start &
+
+# Enable local port forwarding
+sudo iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 3000
+npm start to manually start

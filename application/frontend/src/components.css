@@ -1,0 +1,58 @@
+/* 
+========================
+    Advance Search
+========================
+*/
+
+.advanced-search-container h1 {
+    font-size: 3rem;
+    letter-spacing: normal;
+    margin-top: 6.5rem;
+    margin-bottom: 1rem;
+}
+
+.advance-search-form {
+    width: 80%;
+    max-width: 65rem;
+    background: rgba(206, 223, 255, .7333333333333333);
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+    margin: auto;
+    padding: 1rem 1rem 1.5rem 1rem;
+}
+
+.advance-search-form button {
+    width: 80%;
+}
+
+.search-component select,
+.search-component input {
+    padding: 1rem;
+    width: 70%;
+}
+
+.search-component {
+    padding: 1rem;
+}
+
+.search-component label {
+    font-size: 2rem;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.search-component {
+    display: flex;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 600px) {
+    .search-component label {
+        display: none;
+    }
+
+    .search-component select,
+    .search-component input {
+        width: 100%;
+    }
+}

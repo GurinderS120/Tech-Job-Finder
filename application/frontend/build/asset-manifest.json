@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/static/css/main.3aa2c4db.chunk.css",
+    "main.js": "/static/js/main.a2ce67b8.chunk.js",
+    "main.js.map": "/static/js/main.a2ce67b8.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.9ccdce53.js",
+    "runtime-main.js.map": "/static/js/runtime-main.9ccdce53.js.map",
+    "static/js/2.48109894.chunk.js": "/static/js/2.48109894.chunk.js",
+    "static/js/2.48109894.chunk.js.map": "/static/js/2.48109894.chunk.js.map",
+    "static/js/3.7d17edf8.chunk.js": "/static/js/3.7d17edf8.chunk.js",
+    "static/js/3.7d17edf8.chunk.js.map": "/static/js/3.7d17edf8.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.3aa2c4db.chunk.css.map": "/static/css/main.3aa2c4db.chunk.css.map",
+    "static/js/2.48109894.chunk.js.LICENSE.txt": "/static/js/2.48109894.chunk.js.LICENSE.txt",
+    "static/media/5g.a407b021.png": "/static/media/5g.a407b021.png",
+    "static/media/RoboticProcessAutomation.bdfd83f3.png": "/static/media/RoboticProcessAutomation.bdfd83f3.png",
+    "static/media/aimi.d8560ce7.png": "/static/media/aimi.d8560ce7.png",
+    "static/media/augmi.6d1b245d.png": "/static/media/augmi.6d1b245d.png",
+    "static/media/blockchai.116c6c74.png": "/static/media/blockchai.116c6c74.png",
+    "static/media/cyber.c93882ca.png": "/static/media/cyber.c93882ca.png",
+    "static/media/edge.03a83b00.png": "/static/media/edge.03a83b00.png",
+    "static/media/iot.b14808d9.png": "/static/media/iot.b14808d9.png",
+    "static/media/quan.b96394bb.png": "/static/media/quan.b96394bb.png",
+    "static/media/about.css": "/static/media/sfsu.2be738f3.jpg",
+    "static/media/virtualr.df78f206.png": "/static/media/virtualr.df78f206.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9ccdce53.js",
+    "static/js/2.48109894.chunk.js",
+    "static/css/main.3aa2c4db.chunk.css",
+    "static/js/main.a2ce67b8.chunk.js"
+  ]
+}

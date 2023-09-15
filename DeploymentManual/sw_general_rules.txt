@@ -1,0 +1,37 @@
+GITHUB REVIEW
+If you wish to push any changes onto the main branch, you will need to pull the requests with at least 1 approved review.
+
+The other rules I cannot find a way to have github enforce, so please try your best you implement them properly.
+
+GITHUB COMMIT MESSAGES
+Commit messages should be a short summary in proper English about what was done, for example:
+git commit -m "Fixed the home button on navbar."
+
+GITHUB BRANCH NAMING CONVENTION
+We will have a naming convention for our branches as follows:
+<branch author initials>_<branch purpose>_<change summary>
+example purposes would include:
+bug = bug fixes
+wip = work in progress
+feat = adding/removing features
+So for example sw_bugfix_home if I were to fix a bug on the home page. Please keep everything lower case. (snake case)
+
+If we make a branch that doesn't necessarily belong to a specific author, omit the branch author initials:
+<branch purpose>_<change summary>
+for example: bugfix_home
+
+FILES NAMING CONVENTION
+<author initials>_<short description(in snake case)>
+File names should be short and descriptive, < 25 characters.
+AVOID any special characters.
+Example:
+sw_home_page
+If we make any content that doesn't necessarily belong to a specific author, omit the branch author initials. See GITHUB BRANCH NAMING CONVENTION for examples.
+
+VARIABLE NAMING CONVENTION
+We should ALWAYS use meaningful variable names, and we should use snake case.
+Snake case is defined as: Style of writing in which each space is replaced by an underscore(_) and the first letter of each word is lower case.
+Examples:
+user_id
+home_button
+email

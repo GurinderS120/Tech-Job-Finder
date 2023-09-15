@@ -1,0 +1,12 @@
+[Service]
+WorkingDirectory=/home/ubuntu/csc648-02-sp22-team02/application/backend
+ExecStart=/usr/local/bin/npm start
+Restart=always
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=ubuntu
+User=ubuntu
+Group=ubuntu
+
+[Install]
+WantedBy=multi-user.target
